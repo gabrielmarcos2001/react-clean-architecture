@@ -3,7 +3,7 @@ import { MovieDataModel } from "../../data/models/movie";
 /**
  * Domain level Movie defition
  */
-export type MovieModel = {
+export type Movie = {
   id: string;
   title: string;
   rating: number;
@@ -18,7 +18,7 @@ export const movieConverter = {
    * @param movie 
    * @returns 
    */
-  toDataModel: (movie: MovieModel) => {
+  toDataModel: (movie: Movie) => {
     return {
       id: movie.id,
       title: movie.title,
@@ -33,8 +33,8 @@ export const movieConverter = {
    * @returns 
    */
   fromDataModel: (movie: MovieDataModel) => {
-    const result: MovieModel = {
-      id: movie.id,
+    const result: Movie = {
+      id: movie.id || '',
       title: movie.title,
       rating: movie.rating,
       category: movie.category,
@@ -50,7 +50,7 @@ export const movieConverter = {
  * @param category 
  * @returns 
  */
-function getCategoryName(category: number): string {
+export function getCategoryName(category: number): string {
   switch (category) {
     case 1: {
       return "Horror";
@@ -59,7 +59,7 @@ function getCategoryName(category: number): string {
       return "Fiction";
     }
     default: {
-      return "Unknown Category";
+      return "";
     }
   }
 };

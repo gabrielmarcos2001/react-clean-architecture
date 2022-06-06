@@ -1,0 +1,17 @@
+{
+  "create_movie_success": "Movie was successfully saved with id: {{movieId}}",
+  "create_movie_error": "There was an error saving movie information: {{error}}",
+  "error_movie_title_mandatory": "Title is mandatory",
+  "error_movie_category_mandatory": "Category is mandatory",
+  "form_movie_title": "Title",
+  "form_movie_category": "Category",
+  "form_saving_movie": "Saving ...",
+  "form_save_movie": "Save Movie",
+  "create_movie_title": "Add a Movie",
+  "home_title": "Your list of Movies",
+  "app_title": "Movie List",
+  "empty_movies_list": "We haven't found any movies added to your list. Please add some new Movies!",
+  "add_movie": "Add new Movie",
+  "movie_list_header": "We have found {{count}} movies in your list. You can add more movies at any time!",
+  "loading_movies": "Loading your list of movies"
+}

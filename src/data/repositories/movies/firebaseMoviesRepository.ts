@@ -31,7 +31,7 @@ const movieConverter = {
 export class FirebaseMoviesRepository implements IMoviesRepository {
 
   /**
-   * Returns a mock array with a list of movies
+   * Returns an array with the list of saved movies
    * @returns 
    */
   async fetch(): Promise<MovieDataModel[]> {
@@ -44,18 +44,26 @@ export class FirebaseMoviesRepository implements IMoviesRepository {
   }
 
   /**
-   * Returns a fake movie id
-   * @param movie 
+   * Creates a new Movie object and returns its data
+   * @param title 
+   * @param category 
+   * @param rating 
    * @returns 
    */
-  async create(movie: MovieDataModel): Promise<string> {
+  async create(title: string, category: number, rating: number): Promise<MovieDataModel> {
     const moviesRef = collection(db, 'movies')
+    const movie: MovieDataModel = {
+      title,
+      rating,
+      category,
+    }
     const result = await addDoc(moviesRef, movieConverter.toFirestore(movie));
-    return result.id;
+    movie.id = result.id;
+    return movie;
   }
 
   /**
-   * Updates the movie
+   * Updates the movie information
    * @param id 
    * @param movie 
    */

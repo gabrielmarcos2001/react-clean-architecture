@@ -1,0 +1,6 @@
+{
+  "create_movie_success": "La pelicula fue grabada exitosamente con id: {{movieId}}",
+  "create_movie_error": "Hubo un error al intentar gabar la pelicula: {{error}}",
+  "error_movie_title_mandatory": "El titulo es obligatorio",
+  "error_movie_category_mandatory": "La categoria es obligatoria"
+}

@@ -28,13 +28,20 @@ export class MockMoviesRepository implements IMoviesRepository {
   }
 
   /**
-   * Returns a fake movie id
-   * @param movie 
+   * Returns a moke movie model object
+   * @param title 
+   * @param category 
+   * @param rating 
    * @returns 
    */
-  create(movie: MovieDataModel): Promise<string> {
+  create(title: string, category: number, rating: number): Promise<MovieDataModel> {
     return new Promise((resolve): void => {
-      resolve("1");
+      resolve({
+        id: '1',
+        title,
+        rating,
+        category
+      });
     });
   }
 
